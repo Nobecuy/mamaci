@@ -62,9 +62,11 @@ table {
 	max-width: none;
 	overflow: hidden;
 	padding-bottom: 1000px;
+  z-index: 1;
+  overflow: visible;
 }
 
-.img img {
+.home .img img {
     position: absolute; /* Pastikan elemen mengikuti posisi yang diinginkan */
     height: 70px;
     width: 70px;
@@ -421,22 +423,26 @@ animation: fadeIn 2s;
 }
 
 .navbar {
-	position: fixed;
-	top: 10px; /* Ubah dari 0 ke 10px */
-	left: 0;
-	right: 0;
-	background-color: #333;
-	color: white;
-	display: flex;
-	justify-content: space-around;
-	padding: 10px 0;
-	z-index: 1000;
-	border-radius: 200px;
-	margin: 10px auto;
-	width: 90%;
-	max-width: 800px;
-	transition: top 0.3s;
-  }
+  position: fixed;
+  top: 10px;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  z-index: 1000; /* Pastikan z-index cukup tinggi */
+  border-radius: 200px;
+  margin: 10px auto;
+  width: 90%;
+  max-width: 800px;
+  transition: top 0.3s;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(15px);
+  border: 1px solid #90909048;
+  box-shadow: 0 5px 20px #00000042;
+}
   
   .navbar {
 	  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
@@ -550,6 +556,10 @@ animation: fadeIn 2s;
 /* Default hidden state */
 .hidden {
   opacity: 0;
+}
+
+.show {
+  animation: showNav 0.3s forwards;
 }
 
   @keyframes hideNav {
